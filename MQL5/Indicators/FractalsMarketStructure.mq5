@@ -29,7 +29,7 @@ double ExtLowPriceBuffer[]; // Lower price
 
 // config
 input group "Section :: Main";
-input bool InpDebugEnabled = true; // Enable debug (verbose logging)
+input bool InpDebugEnabled = false; // Enable debug (verbose logging)
 input int InpPeriod = 10; // Period
 
 input group "Section :: Style";
