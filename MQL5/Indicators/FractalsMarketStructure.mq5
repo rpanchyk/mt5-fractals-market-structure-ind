@@ -58,9 +58,9 @@ int OnInit()
 
    IndicatorSetInteger(INDICATOR_DIGITS, _Digits);
 
-   ArrayInitialize(ExtHighPriceBuffer, EMPTY_VALUE);
+   ArrayInitialize(ExtHighPriceBuffer, 0);
    SetIndexBuffer(0, ExtHighPriceBuffer, INDICATOR_DATA);
-   PlotIndexSetDouble(0, PLOT_EMPTY_VALUE, EMPTY_VALUE);
+   PlotIndexSetDouble(0, PLOT_EMPTY_VALUE, 0);
    PlotIndexSetString(0, PLOT_LABEL, "High1");
    PlotIndexSetInteger(0, PLOT_DRAW_TYPE, DRAW_ARROW);
    PlotIndexSetInteger(0, PLOT_ARROW, 159);
@@ -68,9 +68,9 @@ int OnInit()
    PlotIndexSetInteger(0, PLOT_LINE_WIDTH, InpArrowSize);
    PlotIndexSetInteger(0, PLOT_LINE_COLOR, InpHigherHighColor);
 
-   ArrayInitialize(ExtLowPriceBuffer, EMPTY_VALUE);
+   ArrayInitialize(ExtLowPriceBuffer, 0);
    SetIndexBuffer(1, ExtLowPriceBuffer, INDICATOR_DATA);
-   PlotIndexSetDouble(1, PLOT_EMPTY_VALUE, EMPTY_VALUE);
+   PlotIndexSetDouble(1, PLOT_EMPTY_VALUE, 0);
    PlotIndexSetString(1, PLOT_LABEL, "Low1");
    PlotIndexSetInteger(1, PLOT_DRAW_TYPE, DRAW_ARROW);
    PlotIndexSetInteger(1, PLOT_ARROW, 159);
@@ -197,7 +197,7 @@ void SetHigh(const datetime &time[], const double &high[], const double &low[], 
      {
       if(low[lowIdx] > high[i])
         {
-         ExtLowPriceBuffer[lowIdx] = EMPTY_VALUE;
+         ExtLowPriceBuffer[lowIdx] = 0;
          if(InpDebugEnabled)
            {
             PrintFormat("Remove low price %f at %s on %i bar", low[lowIdx], TimeToString(time[lowIdx]), lowIdx);
@@ -241,7 +241,7 @@ void SetLow(const datetime &time[], const double &high[], const double &low[], i
      {
       if(high[highIdx] < low[i])
         {
-         ExtHighPriceBuffer[highIdx] = EMPTY_VALUE;
+         ExtHighPriceBuffer[highIdx] = 0;
          if(InpDebugEnabled)
            {
             PrintFormat("Remove high price %f at %s on %i bar", high[highIdx], TimeToString(time[highIdx]), highIdx);
