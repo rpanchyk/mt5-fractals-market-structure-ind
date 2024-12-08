@@ -4,6 +4,7 @@ Indicator shows market structure based on fractals in MetaTrader 5.
 ## Installation
 - Open data folder in MetaTrader from menu `File -> Open Data Folder`.
 - Copy [FractalsMarketStructure.mq5](MQL5/Indicators/FractalsMarketStructure.mq5) file to `<METATRADER_DATA_DIR>\MQL5\Indicators` folder.
+- Copy [WilliamsFractals.mq5](MQL5/Indicators/WilliamsFractals.mq5) file to `<METATRADER_DATA_DIR>\MQL5\Indicators` folder.
 - Update the list of indicators on Navigator panel.
 - Drag indicator on the chart.
 
